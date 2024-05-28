@@ -28,4 +28,4 @@ To create a Promise, you can use the `new Promise()` constructor. The constructo
 
 ## Github
 
-(Alltoft/home)[https://github.com/Alltoft]
+[Alltoft/home][https://github.com/Alltoft]

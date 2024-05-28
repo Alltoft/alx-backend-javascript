@@ -41,5 +41,3 @@ To start using JavaScript, you'll need a text editor and a web browser. Here are
 3. Save the file.
 4. Open a web browser and create a new HTML file (e.g., `index.html`).
 5. Link your JavaScript file to the HTML file using the `<script>` tag.
-
-```html
