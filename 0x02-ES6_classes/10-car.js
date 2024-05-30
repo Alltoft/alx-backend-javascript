@@ -6,6 +6,6 @@ export default class car {
   }
 
   cloneCar() {
-    return new constractor();
+    return new this.constractor();
   }
 }
