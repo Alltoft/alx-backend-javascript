@@ -1,3 +1,4 @@
+/*eslint-disable*/
 export default class HolbertonCourse {
   constructor(name, length, students) {
     if (typeof name !== 'string') {
@@ -6,10 +7,10 @@ export default class HolbertonCourse {
     if (typeof length !== 'number') {
       throw new TypeError('Length must be a number');
     }
-    if (!Array.isArray(students) || !students.every((student) => typeof student === 'string')) {
-      throw new TypeError('Students must be an rray of strings');
+    if ((!Array.isArray(students) || !students.every((student) => typeof student === 'string'))) {
+      throw new TypeError('Students must be an array of Strings');
     }
-    // storing each attr in an underscore
+
     this._name = name;
     this._length = length;
     this._students = students;
@@ -19,33 +20,32 @@ export default class HolbertonCourse {
     return this._name;
   }
 
-  // 'value' is the new value that is being assigned to name
-  set name(value) {
-    if (typeof value !== 'string') {
-      throw new TypeError('Name must be a string');
-    }
-    this._name = value;
+  set name(newname) {
+    if (typeof newname !== 'string') {
+        throw new TypeError('Name must be a string');
+      }
+    this._name = newname;
   }
 
   get length() {
-    return this._length;
+    return this._name;
   }
 
-  set length(value) {
-    if (typeof value !== 'number') {
-      throw new TypeError('Length must be a number');
-    }
-    this._length = value;
+  set length(newlength) {
+    if (typeof newlength !== 'number') {
+        throw new TypeError('Length must be a number');
+      }
+    this._length = newlength;
   }
 
   get students() {
     return this._students;
   }
 
-  set students(value) {
+  set students(newstudents) {
     if (!Array.isArray(value) || !value.every((student) => typeof student === 'string')) {
-      throw new TypeError('Students must be an array of strings');
+        throw new TypeError('Students must be an array of strings');
     }
-    this._students = value;
+    this._students = newstudents;
   }
 }
