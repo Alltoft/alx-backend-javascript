@@ -13,16 +13,19 @@
 //         return newStr.join('-');
 //     });
 // }
-export default function cleanSet(set, startString) {
-  if (startString === '' || typeof startString !== 'string' || startString.length === 0) {
+/* eslint-disable */
+function cleanSet(set, start_string) {
+  if (
+    start_string === ''
+      || typeof start_string !== 'string'
+      || start_string.length === 0
+  ) {
     return '';
   }
-  const stringUni = [];
-  for (const value of set) {
-    if (value.startsWith(startString)) {
-      // WE'RE SLICING value str from the index equivalent to length of startstring
-      stringUni.push(value.slice(startString.length));
-    }
-  }
-  return stringUni.join('-');
+  return [...set]
+    .filter((str) => str.startsWith(start_string))
+    .map((str) => str.slice(start_string.length))
+    .join('-');
 }
+
+export default cleanSet;
