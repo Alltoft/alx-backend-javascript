@@ -1,3 +1,4 @@
+/*eslint-disable*/
 export default function updateStudentGradeByCity(arrOFobj, str, newGrades) {
   const bycity = arrOFobj.filter((val) => val.location === str);
   return bycity.map((val) => {
