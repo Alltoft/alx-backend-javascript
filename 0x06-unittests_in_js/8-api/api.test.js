@@ -1,25 +1,19 @@
 const request = require('request');
-const { expect } = require('chai');
+const chai = require('chai');
 
-describe('Index page', function () {
-  it('should have the correct status code', function (done) {
-    request('http://localhost:7865', function (error, response) {
-      expect(response.statusCode).to.equal(200);
-      done();
-    });
-  });
+const { expect } = chai;
 
-  it('should have the correct result', function (done) {
-    request('http://localhost:7865', function (error, response, body) {
-      expect(body).to.equal('Welcome to the payment system');
-      done();
-    });
-  });
-
-  it('other?', function (done) {
-    request('http://localhost:7865', function (error, response, body) {
-      expect(body).to.not.equal('Something else');
-      done();
-    });
+describe('Index page', () => {
+  it('response', (done) => {
+    try {
+      request('http://localhost:7865/', (err, res, body) => {
+        if (err) throw err;
+        expect(body).to.be.equal('Welcome to the payment system');
+        expect(res.statusCode).to.be.equal(200);
+        done();
+      });
+    } catch (err) {
+      done(err);
+    }
   });
 });
